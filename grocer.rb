@@ -40,7 +40,7 @@ def apply_clearance(cart)
   cart.keys.each do |memo|
     if cart[memo][:clearance]
       cart[memo][:price] = 0.8*cart[memo][:price]
-      cart[memo][:price].round(2)
+      cart[memo][:price] = cart[memo][:price].round(2)
     end
   end
 end
