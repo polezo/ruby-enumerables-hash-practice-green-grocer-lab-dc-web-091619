@@ -48,5 +48,8 @@ end
 def checkout(cart, coupons)
   coupons_cart = consolidate_cart(cart)
   clearance_cart = apply_coupons(coupons_cart,coupons)
-  checkout_cart =
+  checkout_cart = apply_clearance(clearance_cart)
+  running_total = 0.0
+  clearance_cart.each do |memo|
+    running_memo[:price]=
 end
