@@ -52,7 +52,7 @@ def checkout(cart, coupons)
   checkout_cart = apply_clearance(clearance_cart)
   running_total = 0.0
   checkout_cart.keys.each do |memo|
-    running_total += checkout_cart[memo][:price]
+    running_total += (checkout_cart[memo][:price]*checkout_cart[memo][:count])
   end
   if running_total >= 100.0
     running_total *= 0.9
