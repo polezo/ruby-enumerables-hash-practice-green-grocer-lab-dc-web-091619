@@ -39,7 +39,7 @@ end
 def apply_clearance(cart)
   cart.keys.each do |memo|
     if cart[memo][:clearance]
-      cart[memo][:price] = 0.8*cart[memo][:price]
+      cart[memo][:price] *= 0.8 
       cart[memo][:price] = cart[memo][:price].round(2)
     end
   end
@@ -51,7 +51,7 @@ def checkout(cart, coupons)
   checkout_cart = apply_clearance(clearance_cart)
   running_total = 0.0
   clearance_cart.each do |memo|
-    running_total += memo[:price]
+    running_total += clearance_cart[memo][:price]
   end
   if running_total >= 100.0
     running_total *= 0.9
