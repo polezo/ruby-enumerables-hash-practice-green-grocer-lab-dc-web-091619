@@ -56,6 +56,7 @@ def checkout(cart, coupons)
   end
   if running_total >= 100.0
     running_total *= 0.9
+    running_total = running_total.round(2)
   end
   running_total
 end
