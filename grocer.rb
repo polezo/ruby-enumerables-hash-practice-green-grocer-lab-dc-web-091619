@@ -39,15 +39,12 @@ end
 def apply_clearance(cart)
   cart.keys.each do |memo|
    if cart[memo][:clearance]
-      cart[memo][:price] = (cart[memo][:price]*0.80).round(2)
+        cart[memo][:price] *= 0.80
+        cart[memo][:price] = cart[memo][:price].round(2)
     end
   end
-end
-
-  cart.keys.each do |item|
-    
-  end
   cart
+end
 
 def checkout(cart, coupons)
   coupons_cart = consolidate_cart(cart)
