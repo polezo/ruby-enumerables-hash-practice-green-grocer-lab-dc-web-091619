@@ -51,5 +51,9 @@ def checkout(cart, coupons)
   checkout_cart = apply_clearance(clearance_cart)
   running_total = 0.0
   clearance_cart.each do |memo|
-    running_memo[:price]=
+    running_total += memo[:price]
+  end
+  if running_total >= 100.0
+    running_total *= 0.9
+  end
 end
